@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "book-store": {
+    "userFormApp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/book-store",
+            "outputPath": "dist/user-form-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "book-store:build:production"
+              "buildTarget": "userFormApp:build:production"
             },
             "development": {
-              "buildTarget": "book-store:build:development"
+              "buildTarget": "userFormApp:build:development"
             }
           },
           "defaultConfiguration": "development"

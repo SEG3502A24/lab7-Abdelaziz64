@@ -1,28 +1,24 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { provideHttpClientTesting } from "@angular/common/http/testing";
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
+  let fixture: ComponentFixture<AppComponent>;
+  let component: AppComponent;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [RouterTestingModule,
-        AppComponent],
-    providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
-}).compileComponents();
+      imports: [AppComponent, RouterTestingModule]
+    }).compileComponents();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  it(`should have as title 'book-store'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('book-store');
+  it('should create the app component', () => {
+    expect(component).toBeTruthy();
   });
 });
